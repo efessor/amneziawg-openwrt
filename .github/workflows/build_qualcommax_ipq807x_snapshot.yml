@@ -42,7 +42,7 @@ jobs:
 
           # Setup & install feeds
           wget https://downloads.openwrt.org/${{ matrix.build_env.tag }}/targets/${{ matrix.build_env.target}}/${{ matrix.build_env.subtarget}}/feeds.buildinfo -O feeds.conf
-          echo "src-git awgopenwrt https://github.com/dimfishr/amneziawg-openwrt.git" >> ./feeds.conf
+          echo "src-git awgopenwrt https://github.com/smallb0y/amneziawg-openwrt.git" >> ./feeds.conf
           ./scripts/feeds update && ./scripts/feeds install -a
 
           # Setup config with AWG and dependencies
