@@ -1,5 +1,4 @@
-name: Create Release on Tag
-# on: [workflow_dispatch]
+name: build_qualcommax_ipq807x_snapshot
 on:
   workflow_dispatch:
   push:
@@ -98,7 +97,7 @@ jobs:
       - name: Generate release tag
         id: tag
         run: |
-          echo "::set-output name=release_tag::Build_$(vermagic)"
+          echo "::set-output name=release_tag::Build_for_$vermagic"
       - name: Release
         uses: softprops/action-gh-release@v1
         with:
