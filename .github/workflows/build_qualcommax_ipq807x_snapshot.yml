@@ -17,7 +17,7 @@ jobs:
             pkgarch: aarch64_cortex-a53
             target: qualcommax
             subtarget: ipq807x
-            vermagic: "57f181d0bc49da09f5ecaeb78be5a986"
+            vermagic: "6189d93b45fae71399a68254e9c53dbc"
 
     steps:
       - uses: actions/checkout@v4
@@ -98,7 +98,7 @@ jobs:
       - name: Generate release tag
         id: tag
         run: |
-          echo "::set-output name=release_tag::Build_$(date +"%Y.%m.%d-%H.%M")"
+          echo "::set-output name=release_tag::Build_$(vermagic)"
       - name: Release
         uses: softprops/action-gh-release@v1
         with:
