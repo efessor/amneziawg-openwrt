@@ -97,7 +97,7 @@ jobs:
       - name: Generate release tag
         id: tag
         run: |
-          echo "::set-output name=release_tag::Build_for_$vermagic"
+          echo "::set-output name=release_tag::Build_for_${{ matrix.build_env.vermagic}}"
       - name: Release
         uses: softprops/action-gh-release@v1
         with:
